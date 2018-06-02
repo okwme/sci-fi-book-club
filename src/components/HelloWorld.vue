@@ -47,7 +47,12 @@ export default {
           recaptchaToken: recaptchaToken
         })
         .then(response => {
-          self.sucessfulServerResponse = response.data.message
+          if (response.data.ok) {
+            self.sucessfulServerResponse = 'Thank you, please check your email'
+            self.email = ''
+          } else {
+            self.sucessfulServerResponse = response.data
+          }
         })
         .catch(err => {
           self.serverError = getErrorMessage(err)
