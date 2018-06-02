@@ -31,11 +31,19 @@ exports.handler = function(event, context, callback) {
         } else {
           // add slack email
           axios
-            .get(slackUrl + '?email=' + email + '&token=' + token, {
-              headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+            .get(
+              slackUrl +
+                '?email=' +
+                email +
+                '&token=' +
+                token +
+                '&channels=CAM1TDWAJ,CAL4XKJKC,CAL4XKKHQ', // sci-fi-book-club, general, random
+              {
+                headers: {
+                  'Content-Type': 'application/x-www-form-urlencoded'
+                }
               }
-            })
+            )
             .then(res => {
               if (res.data.ok) {
                 callback(null, {

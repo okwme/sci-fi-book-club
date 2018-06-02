@@ -33,8 +33,6 @@ body {
   padding: 1em;
 }
 input {
-  text-transform: uppercase;
-
   padding: 10px 5px;
   width: 100%;
   max-width: 400px;

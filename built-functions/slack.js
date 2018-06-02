@@ -16813,7 +16813,8 @@ exports.handler = function (event, context, callback) {
           });
         } else {
           // add slack email
-          __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(slackUrl + '?email=' + email + '&token=' + token, {
+          __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(slackUrl + '?email=' + email + '&token=' + token + '&channels=CAM1TDWAJ,CAL4XKJKC,CAL4XKKHQ', // sci-fi-book-club, general, random
+          {
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
             }
