@@ -35,10 +35,6 @@ export default {
   methods: {
     submit: function() {
       this.status = 'submitting'
-      let foo = this.$refs.recaptcha.checkRecaptchaLoad()
-      console.log(foo)
-      foo = this.$refs.recaptcha.assertLoaded()
-      console.log(foo)
       this.$refs.recaptcha.execute()
     },
     onCaptchaVerified: function(recaptchaToken) {
