@@ -42,7 +42,7 @@ export default {
       self.status = 'submitting'
       self.$refs.recaptcha.reset()
       axios
-        .post('/.netlify/functions/slack', {
+        .post('/slack', {
           email: self.email,
           recaptchaToken: recaptchaToken
         })
