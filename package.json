@@ -5,16 +5,15 @@
     "author": "Billy Rennekamp <billy.rennekamp@gmail.com>",
     "private": true,
     "scripts": {
-        "dev":
-            "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+        "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
         "start": "npm run dev",
         "lint": "eslint --ext .js,.vue src",
-        "build": "node build/build.js && cp _redirects dist/"
+        "build": "node build/build.js && cp _redirects dist/",
+        "netlify": "netlify-lambda serve functions"
     },
     "dependencies": {
         "axios": "^0.18.0",
         "dotenv": "^5.0.1",
-        "netlify-lambda": "^0.4.0",
         "recaptcha": "^1.2.1",
         "vue": "^2.5.2",
         "vue-recaptcha": "^1.1.1",
@@ -49,6 +48,7 @@
         "friendly-errors-webpack-plugin": "^1.6.1",
         "google-recaptcha": "^1.1.0",
         "html-webpack-plugin": "^2.30.1",
+        "netlify-lambda": "^0.4.0",
         "node-notifier": "^5.1.2",
         "optimize-css-assets-webpack-plugin": "^3.2.0",
         "ora": "^1.2.0",
@@ -73,5 +73,9 @@
         "node": ">= 6.0.0",
         "npm": ">= 3.0.0"
     },
-    "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not ie <= 8"
+    ]
 }

@@ -8,7 +8,7 @@
         @verify="onCaptchaVerified"
         @expired="onCaptchaExpired"
         size="invisible"
-        sitekey="6LfD3lwUAAAAAJQ_Sr7ZP9ec-hVa-R-WbLKxnMaF">
+        :sitekey="google">
       </vue-recaptcha>
       <button :disabled="status==='submitting'" type="submit" class="button"></button>
       <div v-if="status">{{status}}</div>
@@ -29,7 +29,8 @@ export default {
       email: '',
       status: '',
       sucessfulServerResponse: '',
-      serverError: ''
+      serverError: '',
+      google: '6LfD3lwUAAAAAJQ_Sr7ZP9ec-hVa-R-WbLKxnMaF'
     }
   },
   methods: {
@@ -42,7 +43,7 @@ export default {
       self.status = 'submitting'
       self.$refs.recaptcha.reset()
       axios
-        .post('/.netlify/functions/slack', {
+        .post('/slack', {
           email: self.email,
           recaptchaToken: recaptchaToken
         })
