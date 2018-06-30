@@ -2,7 +2,7 @@
 
 > sci fi book club
 
-## Build Setup
+## Develop
 
 
 ``` bash
@@ -31,7 +31,9 @@ Then run the app
 npm run dev
 ```
 
-# Aftewards deploy to netlify and add your .env variables directly to the netlify configuration
+Aftewards deploy to netlify and add your .env variables directly to the netlify configuration
+
+## Build
 
 ``` bash
 # build for production with minification
