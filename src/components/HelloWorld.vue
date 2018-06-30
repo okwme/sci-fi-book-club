@@ -8,7 +8,7 @@
         @verify="onCaptchaVerified"
         @expired="onCaptchaExpired"
         size="invisible"
-        :sitekey="google">
+        sitekey="google">
       </vue-recaptcha>
       <button :disabled="status==='submitting'" type="submit" class="button"></button>
       <div v-if="status">{{status}}</div>
